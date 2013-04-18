@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07009D05171E7538007C2243 /* Tokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07009D04171E7538007C2243 /* Tokenizer.cpp */; };
+		07009D08171F8DF1007C2243 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 07009D07171F8DF1007C2243 /* Makefile */; };
 		076A4870170A71B800EC227D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076A486F170A71B800EC227D /* main.cpp */; };
 		076A4886170A72F900EC227D /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076A4885170A72F900EC227D /* Menu.cpp */; };
 		076A4888170A75AA00EC227D /* MenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076A4887170A75AA00EC227D /* MenuItem.cpp */; };
@@ -32,9 +32,8 @@
 		07009CFA171CE57D007C2243 /* menu+menuitem_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "menu+menuitem_test"; sourceTree = "<group>"; };
 		07009D01171CE9EA007C2243 /* order_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = order_test; sourceTree = "<group>"; };
 		07009D02171E749B007C2243 /* table+waiter_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "table+waiter_test"; sourceTree = "<group>"; };
-		07009D03171E751A007C2243 /* Tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tokenizer.h; sourceTree = "<group>"; };
-		07009D04171E7538007C2243 /* Tokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tokenizer.cpp; sourceTree = "<group>"; };
 		07009D06171E963B007C2243 /* managers_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = managers_test; sourceTree = "<group>"; };
+		07009D07171F8DF1007C2243 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = Restaurant/Makefile; sourceTree = "<group>"; };
 		072F3EDA1713A95500EDF39B /* activity.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = activity.txt; path = Restaurant/activity.txt; sourceTree = "<group>"; };
 		072F3EDB1713B77D00EDF39B /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.txt; path = Restaurant/config.txt; sourceTree = "<group>"; };
 		072F3EDC1713B7AA00EDF39B /* tokenizer_activity */ = {isa = PBXFileReference; lastKnownFileType = text; path = tokenizer_activity; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		076A4860170A71B700EC227D = {
 			isa = PBXGroup;
 			children = (
+				07009D07171F8DF1007C2243 /* Makefile */,
 				07009D06171E963B007C2243 /* managers_test */,
 				07009D02171E749B007C2243 /* table+waiter_test */,
 				07009D01171CE9EA007C2243 /* order_test */,
@@ -107,7 +107,6 @@
 				076A487D170A71FE00EC227D /* Order.h */,
 				076A487E170A71FE00EC227D /* Table.h */,
 				076A4881170A71FE00EC227D /* Waiter.h */,
-				07009D03171E751A007C2243 /* Tokenizer.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -121,7 +120,6 @@
 				07839B4F1718AF5C008E4E0B /* Table.cpp */,
 				078BE0BD1716579600C435E9 /* Order.cpp */,
 				07839B521718BA63008E4E0B /* Waiter.cpp */,
-				07009D04171E7538007C2243 /* Tokenizer.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -183,7 +181,7 @@
 				078BE0BE1716579600C435E9 /* Order.cpp in Sources */,
 				07839B501718AF5C008E4E0B /* Table.cpp in Sources */,
 				07839B531718BA63008E4E0B /* Waiter.cpp in Sources */,
-				07009D05171E7538007C2243 /* Tokenizer.cpp in Sources */,
+				07009D08171F8DF1007C2243 /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
