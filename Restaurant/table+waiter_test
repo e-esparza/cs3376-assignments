@@ -1,0 +1,18 @@
+    Waiter john("John Doe", 2);
+    
+    Table table1(1, 4);
+    Table table2(2, 4);
+    Table table3(3, 2);
+    Table table4(4, 2);
+    
+    Table * t1 = &table1;
+    Table * t2 = &table2;
+    Table * t3 = &table3;
+    Table * t4 = &table4;
+    
+    john.addTable(t1);
+    john.addTable(t2);
+    john.addTable(t3);
+    john.addTable(t4);
+    
+    john.printTables();

@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07009D05171E7538007C2243 /* Tokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07009D04171E7538007C2243 /* Tokenizer.cpp */; };
+		076A4870170A71B800EC227D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076A486F170A71B800EC227D /* main.cpp */; };
+		076A4886170A72F900EC227D /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076A4885170A72F900EC227D /* Menu.cpp */; };
+		076A4888170A75AA00EC227D /* MenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076A4887170A75AA00EC227D /* MenuItem.cpp */; };
+		07839B501718AF5C008E4E0B /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07839B4F1718AF5C008E4E0B /* Table.cpp */; };
+		07839B531718BA63008E4E0B /* Waiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07839B521718BA63008E4E0B /* Waiter.cpp */; };
+		078BE0BE1716579600C435E9 /* Order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078BE0BD1716579600C435E9 /* Order.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		076A4869170A71B700EC227D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07009CFA171CE57D007C2243 /* menu+menuitem_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "menu+menuitem_test"; sourceTree = "<group>"; };
+		07009D01171CE9EA007C2243 /* order_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = order_test; sourceTree = "<group>"; };
+		07009D02171E749B007C2243 /* table+waiter_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "table+waiter_test"; sourceTree = "<group>"; };
+		07009D03171E751A007C2243 /* Tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tokenizer.h; sourceTree = "<group>"; };
+		07009D04171E7538007C2243 /* Tokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tokenizer.cpp; sourceTree = "<group>"; };
+		07009D06171E963B007C2243 /* managers_test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = managers_test; sourceTree = "<group>"; };
+		072F3EDA1713A95500EDF39B /* activity.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = activity.txt; path = Restaurant/activity.txt; sourceTree = "<group>"; };
+		072F3EDB1713B77D00EDF39B /* config.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.txt; path = Restaurant/config.txt; sourceTree = "<group>"; };
+		072F3EDC1713B7AA00EDF39B /* tokenizer_activity */ = {isa = PBXFileReference; lastKnownFileType = text; path = tokenizer_activity; sourceTree = "<group>"; };
+		072F3EDD1714DC7100EDF39B /* tokenizer_config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tokenizer_config; sourceTree = "<group>"; };
+		076A486B170A71B800EC227D /* Restaurant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Restaurant; sourceTree = BUILT_PRODUCTS_DIR; };
+		076A486F170A71B800EC227D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		076A4878170A71D900EC227D /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
+		076A487B170A71FE00EC227D /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		076A487C170A71FE00EC227D /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
+		076A487D170A71FE00EC227D /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		076A487E170A71FE00EC227D /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		076A4881170A71FE00EC227D /* Waiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Waiter.h; sourceTree = "<group>"; };
+		076A4885170A72F900EC227D /* Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		076A4887170A75AA00EC227D /* MenuItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItem.cpp; sourceTree = "<group>"; };
+		07839B4F1718AF5C008E4E0B /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
+		07839B521718BA63008E4E0B /* Waiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Waiter.cpp; sourceTree = "<group>"; };
+		078BE0BD1716579600C435E9 /* Order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Order.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		076A4868170A71B700EC227D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		076A4860170A71B700EC227D = {
+			isa = PBXGroup;
+			children = (
+				07009D06171E963B007C2243 /* managers_test */,
+				07009D02171E749B007C2243 /* table+waiter_test */,
+				07009D01171CE9EA007C2243 /* order_test */,
+				07009CFA171CE57D007C2243 /* menu+menuitem_test */,
+				072F3EDD1714DC7100EDF39B /* tokenizer_config */,
+				072F3EDC1713B7AA00EDF39B /* tokenizer_activity */,
+				072F3EDB1713B77D00EDF39B /* config.txt */,
+				072F3EDA1713A95500EDF39B /* activity.txt */,
+				076A486E170A71B800EC227D /* Restaurant */,
+				076A486C170A71B800EC227D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		076A486C170A71B800EC227D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				076A486B170A71B800EC227D /* Restaurant */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		076A486E170A71B800EC227D /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				076A4884170A720800EC227D /* Sources */,
+				076A4883170A720200EC227D /* Headers */,
+				076A4878170A71D900EC227D /* Readme.md */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		076A4883170A720200EC227D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				076A487B170A71FE00EC227D /* Menu.h */,
+				076A487C170A71FE00EC227D /* MenuItem.h */,
+				076A487D170A71FE00EC227D /* Order.h */,
+				076A487E170A71FE00EC227D /* Table.h */,
+				076A4881170A71FE00EC227D /* Waiter.h */,
+				07009D03171E751A007C2243 /* Tokenizer.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		076A4884170A720800EC227D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				076A486F170A71B800EC227D /* main.cpp */,
+				076A4885170A72F900EC227D /* Menu.cpp */,
+				076A4887170A75AA00EC227D /* MenuItem.cpp */,
+				07839B4F1718AF5C008E4E0B /* Table.cpp */,
+				078BE0BD1716579600C435E9 /* Order.cpp */,
+				07839B521718BA63008E4E0B /* Waiter.cpp */,
+				07009D04171E7538007C2243 /* Tokenizer.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		076A486A170A71B700EC227D /* Restaurant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076A4875170A71B800EC227D /* Build configuration list for PBXNativeTarget "Restaurant" */;
+			buildPhases = (
+				076A4867170A71B700EC227D /* Sources */,
+				076A4868170A71B700EC227D /* Frameworks */,
+				076A4869170A71B700EC227D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Restaurant;
+			productName = Restaurant;
+			productReference = 076A486B170A71B800EC227D /* Restaurant */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		076A4862170A71B700EC227D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Taptivia;
+			};
+			buildConfigurationList = 076A4865170A71B700EC227D /* Build configuration list for PBXProject "Restaurant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 076A4860170A71B700EC227D;
+			productRefGroup = 076A486C170A71B800EC227D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				076A486A170A71B700EC227D /* Restaurant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		076A4867170A71B700EC227D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076A4870170A71B800EC227D /* main.cpp in Sources */,
+				076A4886170A72F900EC227D /* Menu.cpp in Sources */,
+				076A4888170A75AA00EC227D /* MenuItem.cpp in Sources */,
+				078BE0BE1716579600C435E9 /* Order.cpp in Sources */,
+				07839B501718AF5C008E4E0B /* Table.cpp in Sources */,
+				07839B531718BA63008E4E0B /* Waiter.cpp in Sources */,
+				07009D05171E7538007C2243 /* Tokenizer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		076A4873170A71B800EC227D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		076A4874170A71B800EC227D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		076A4876170A71B800EC227D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		076A4877170A71B800EC227D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		076A4865170A71B700EC227D /* Build configuration list for PBXProject "Restaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076A4873170A71B800EC227D /* Debug */,
+				076A4874170A71B800EC227D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		076A4875170A71B800EC227D /* Build configuration list for PBXNativeTarget "Restaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076A4876170A71B800EC227D /* Debug */,
+				076A4877170A71B800EC227D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 076A4862170A71B700EC227D /* Project object */;
+}

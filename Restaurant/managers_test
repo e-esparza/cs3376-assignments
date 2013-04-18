@@ -1,0 +1,43 @@
+    Menu * menu = new Menu(); // The Menu Object.
+    TableManager * tableManager = new TableManager();
+    WaiterManager * waiterManager = new WaiterManager();
+    
+    tableManager->addTable(1, 4);
+    tableManager->addTable(2, 4);
+    tableManager->addTable(3, 3);
+    tableManager->addTable(4, 2);
+    
+    Table * table1 = tableManager->getTableWithId(1);
+    Table * table2 = tableManager->getTableWithId(2);
+    Table * table3 = tableManager->getTableWithId(3);
+    Table * table4 = tableManager->getTableWithId(4);
+    
+    table1->printTableStatus();
+    table2->printTableStatus();
+    table3->printTableStatus();
+    table4->printTableStatus();
+    
+    cout << "Total Table Objects: " << tableManager->count() << endl;
+    
+    waiterManager->addWaiter("John Doe");
+    waiterManager->addWaiter("Billy Bob");
+    waiterManager->addWaiter("Jackson Davis");
+    
+    Waiter *w1 = waiterManager->getWaiterAtIndex(0);
+    Waiter *w2 = waiterManager->getWaiterAtIndex(1);
+    Waiter *w3 = waiterManager->getWaiterAtIndex(2);
+    
+    cout << w1->getName() << endl;
+    cout << w2->getName() << endl;
+    cout << w3->getName() << endl;
+    
+    cout << "Total Waiter Objects: " << waiterManager->count() << endl;
+    
+    // Deallocate memory that stores the table manager.
+    delete tableManager;
+    
+    // Deallocate memory that stores the waiters.
+    delete waiterManager;
+    
+    // Deallocate memory that stores the menu items.
+    delete menu;

@@ -1,0 +1,16 @@
+Menu menu;
+    
+    MenuItem item2("A2", "Another Item", 13.45);
+    
+    MenuItem item3("A3", "An Added Item", 14.55);
+    
+    menu.addItem(MenuItem("A1", "Example Item", 14.95));
+    menu.addItem(item2);
+    menu.addItem(item3);
+    
+    Order order(2);
+    
+    order.addItem(menu.findItem("A2"));
+    order.addItem(menu.findItem("A3"));
+    
+    order.printOrderData();

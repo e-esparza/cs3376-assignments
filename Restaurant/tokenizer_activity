@@ -1,0 +1,90 @@
+    ifstream input("activity.txt");
+    string line;
+    
+    while(getline(input, line))
+    {
+        
+        istringstream iss(line);
+        
+        string token;
+        
+        bool ordering_enabled;
+        
+        ordering_enabled = false;
+        
+        while (iss >> token)
+        {
+            
+            char command_prefix; // Gives us the first letter of the token.
+            
+            int id; // gives us any number that follows the command prefix;
+            
+            command_prefix = token.substr(0, 1).c_str()[0];
+            id = atoi(token.substr(1).c_str());
+            
+            // Command Reference
+            // T - Denotes a new table for programming.
+            // P - Denotes a party of id members is at the table.
+            // O - Denotes that the table should begin ordering.
+            // S - Food has arrived at the table.
+            // C - The customer has left and table is cleaned.
+            // x - Any other command denotes food item if we O'd.
+            // Menu items may have prefix of T,P,O,S, or C.
+            
+            if ( ordering_enabled ) {
+                
+                // Any command_prefix can represent a menu item.
+                cout << "Table ordered item: " << command_prefix << id << endl;
+                
+                // Lets go to the next token.
+                continue;
+                
+            }
+            
+            // If we made it here then we're not
+            // doing an order so process the tokens
+            // as we would normally do.
+            
+            if ( command_prefix == 'T' )
+            {
+                // This is a table switch commmand.
+                cout << "For Table ID: " << id << endl;
+                
+            }
+            
+            else if ( command_prefix == 'P' )
+            {
+                
+                cout << "Set Party Size: " << id << endl;
+                
+            }
+            
+            else if ( command_prefix == 'O' )
+            {
+                
+                ordering_enabled = true;
+                
+                cout << "Table wants to order." << endl;
+                
+            }
+            
+            else if ( command_prefix == 'S' )
+            {
+                
+                cout << "Food has been served at table." << endl;
+                
+            }
+            
+            else if ( command_prefix == 'C' )
+            {
+                
+                cout << "Customer has payed, table is clean." << endl;
+                
+            }
+            
+            
+        }
+        
+        cout << "~~~~~~~~~~~~End of line~~~~~~~~~~~~" << endl;
+        
+    }
