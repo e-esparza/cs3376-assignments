@@ -32,6 +32,7 @@ public:
     void printTableStatus(void);
     int getTableId(void);
     int getCapacity(void);
+    string getWaiterName(void);
 };
 
 class TableManager

@@ -46,7 +46,15 @@ int main(int argc, const char * argv[])
     
     // Current waiter data. Used when parsing for waiters.
     string waiterName;
-    string assignedTables;
+    
+    int * assignedTablesArray; // table to store assigned tables of the waiter.
+    int assignedTablesArraySize;
+    int assignedTablesArrayIndex;
+    
+    assignedTablesArraySize = 0;
+    assignedTablesArrayIndex = 0;
+    
+    assignedTablesArray = NULL; // a null pointer.
     
     // Current menu item data. Used when parsing for menu items.
     string itemId;
@@ -139,7 +147,37 @@ int main(int argc, const char * argv[])
                     // the waiter is waiting.
                 } else {
                     
-                    assignedTables.append(token).append(",");
+                    int waiterTableId = atoi(token.c_str());
+                    
+                    // We need to create the tables array.
+                    if ( assignedTablesArray == NULL ) {
+                        assignedTablesArray = new int[1];
+                        assignedTablesArraySize = 1;
+                    }
+                    
+                    // Expand the assigned tables array.
+                    if ( assignedTablesArrayIndex == assignedTablesArraySize ) {
+                        
+                        int * newAssignledTablesArray = new int[assignedTablesArraySize+1];
+                        
+                        for( int i = 0; i < assignedTablesArrayIndex; i++ )
+                        {
+                            
+                            newAssignledTablesArray[i] = assignedTablesArray[i];
+                            
+                        }
+                        
+                        delete [] assignedTablesArray;
+                        
+                        assignedTablesArray = newAssignledTablesArray;
+                        
+                        assignedTablesArraySize++;
+                        
+                    }
+                    
+                    assignedTablesArray[assignedTablesArrayIndex] = waiterTableId;
+                    
+                    assignedTablesArrayIndex++;
                     
                 }
                 
@@ -196,14 +234,36 @@ int main(int argc, const char * argv[])
         else if ( mode == ConfigTokenizationSectionWaiters && waiterName.length() != 0 )
         {
             
-            // When we appended all the id tokens.
+            Waiter * w = waiterManager->addWaiter(waiterName);
             
-            cout << "New Waiter! (Name: " << waiterName << " Tables: " << assignedTables << ")" << endl;
-            waiterManager->addWaiter(waiterName);
+            if( w == NULL ) {
+                cout << "ERROR: WaiterManager could not add a waiter to management array." << endl;
+            }
+            
+            else {
+                
+                for( int i = 0; i < assignedTablesArrayIndex; i++ )
+                {
+                    
+                    Table * table = tableManager->getTableWithId(assignedTablesArray[i]);
+                    
+                    if ( table == NULL ) {
+                        cout << "WARNING: TableManager could not find table with id " << assignedTablesArray[i] << " and will not assign table to waiter." << endl;
+                        continue;
+                    }
+                    
+                    w->addTable(table);
+                    
+                }
+                
+            }
             
             // Set to defaults for next line.
+            delete [] assignedTablesArray;
+            assignedTablesArray = NULL;
+            assignedTablesArrayIndex = 0;
+            assignedTablesArraySize = 0;
             waiterName = string();
-            assignedTables = string();
             
         }
         

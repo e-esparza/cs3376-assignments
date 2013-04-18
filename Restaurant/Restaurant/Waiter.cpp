@@ -63,12 +63,17 @@ void Waiter::printTables()
         
         Table * table = this->tables[i];
         
-        table->printTableStatus();
+        cout << "Table (ID: " << table->getTableId() << ", Capacity: " << table->getCapacity() << ")" << endl;
         
     }
     
     cout << "~~~~End of " << this->name << "'s Tables~~~~" << endl;
     
+}
+
+int Waiter::getAssignedTables()
+{
+    return this->numTables;
 }
 
 string Waiter::getName()
@@ -100,10 +105,10 @@ WaiterManager::WaiterManager()
     
 }
 
-void WaiterManager::addWaiter(string aName)
+Waiter * WaiterManager::addWaiter(string aName)
 {
     
-    if( aName.length() == 0 ) return;
+    if( aName.length() == 0 ) return NULL;
     
     if( this->index == this->size ) {
         this->expandArray();
@@ -111,7 +116,11 @@ void WaiterManager::addWaiter(string aName)
     
     this->waiters[this->index] = new Waiter(aName);
     
+    Waiter * waiter = this->waiters[this->index];
+    
     this->index++;
+    
+    return waiter;
     
 }
 
@@ -176,7 +185,9 @@ void WaiterManager::printData()
         
         Waiter * waiter = this->waiters[i];
         
-        cout << "Waiter (Name: " << waiter->getName() << ")" << endl;
+        cout << "Waiter (Name: " << waiter->getName() << ", Tables: " << waiter->getAssignedTables() << ")" << endl;
+        
+        waiter->printTables();
         
     }
     

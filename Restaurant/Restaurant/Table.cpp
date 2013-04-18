@@ -149,6 +149,15 @@ int Table::getCapacity()
     return this->maxSeats;
 }
 
+string Table::getWaiterName()
+{
+    
+    if( this->waiter == NULL ) return "(Not assigned.)";
+    
+    else return string(this->waiter->getName());
+    
+}
+
 TableManager::TableManager()
 {
     
@@ -236,7 +245,9 @@ void TableManager::printData()
         
         Table * table = this->tables[i];
         
-        cout << "Table (Id: " << table->getTableId() << " Capacity: " << table->getCapacity() << ")" << endl;
+        string waiter = table->getWaiterName();
+        
+        cout << "Table (Id: " << table->getTableId() << ", Capacity: " << table->getCapacity() << ", Waiter: " << waiter << ")" << endl;
         
     }
     

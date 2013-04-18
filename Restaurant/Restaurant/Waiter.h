@@ -20,6 +20,7 @@ public:
     void addTable(Table * table);
     void printTables(void); // used for debugging
     string getName(void);
+    int getAssignedTables(void);
     ~Waiter();
 };
 
@@ -33,7 +34,7 @@ private:
     
 public:
     WaiterManager();
-    void addWaiter(string aName);
+    Waiter * addWaiter(string aName);
     Waiter * getWaiterWithName(string aName);
     Waiter * getWaiterAtIndex(int anIndex);
     int count(void);
