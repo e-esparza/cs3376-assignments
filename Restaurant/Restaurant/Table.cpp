@@ -74,10 +74,10 @@ void Table::printTableStatus()
     
     string stat;
     
-    if ( this->status == TableStatus::IDLE ) stat = "Table is empty.";
-    else if ( this->status == TableStatus::SEATED ) stat = "People have been seated.";
-    else if ( this->status == TableStatus::ORDERED ) stat = "People have placed an order.";
-    else if ( this->status == TableStatus::SERVED ) stat = "People served and waiting for checkout.";
+    if ( this->status == IDLE ) stat = "Table is empty.";
+    else if ( this->status == SEATED ) stat = "People have been seated.";
+    else if ( this->status == ORDERED ) stat = "People have placed an order.";
+    else if ( this->status == SERVED ) stat = "People served and waiting for checkout.";
     else stat = "(Unknown Status)";
     
     cout << "Status: " << stat << endl;
