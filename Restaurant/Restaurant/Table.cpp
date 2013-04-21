@@ -42,6 +42,10 @@ void Table::partyOrdered(Order *order)
     
     if ( this->status != SEATED || order == NULL ) return;
     
+    if( this->order != NULL ) {
+        delete this->order;
+    }
+    
     this->order = order;
     
     this->status = ORDERED;
@@ -167,7 +171,9 @@ Table::~Table()
     
     this->numPeople = 0;
     
-    delete this->order;
+    if( this->order != NULL ) delete this->order;
+    
+    this->order = NULL;
     
     this->waiter = NULL;
     
