@@ -33,6 +33,7 @@ public:
     int getTableId(void);
     int getCapacity(void);
     string getWaiterName(void);
+    ~Table();
 };
 
 class TableManager

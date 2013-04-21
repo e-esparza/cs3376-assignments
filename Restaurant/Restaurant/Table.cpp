@@ -158,6 +158,19 @@ string Table::getWaiterName()
     
 }
 
+Table::~Table()
+{
+    
+    this->tableId = 0;
+    
+    this->maxSeats = 0;
+    
+    this->numPeople = 0;
+    
+    delete this->order;
+    
+}
+
 TableManager::TableManager()
 {
     
