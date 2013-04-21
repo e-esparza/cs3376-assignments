@@ -288,7 +288,7 @@ int main(int argc, const char * argv[])
     }
     
     // Begin activites
-    //processActivites(menu, tableManager, waiterManager);
+    processActivites(menu, tableManager, waiterManager);
     // End activities
     
     // Some debugging information about the total objects managed.
@@ -370,9 +370,6 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
                 MenuItem * menuItem;
                 
                 menuItem = menu->findItem(menuItemName.str());
-                
-                // Any command_prefix can represent a menu item.
-                //cout << "Table ordered item: " << command_prefix << id << endl;
                 
                 if( menuItem == NULL )
                 {
@@ -459,8 +456,6 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
                 currentTable->partyOrdered(order);
             }
         }
-        
-        //cout << "~~~~~~~~~~~~End of line~~~~~~~~~~~~" << endl;
         
     }
     
