@@ -33,6 +33,8 @@ public:
     int getTableId(void);
     int getCapacity(void);
     string getWaiterName(void);
+    void createOrderObject(void);
+    Order * getOrder(void);
     ~Table();
 };
 

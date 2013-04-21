@@ -40,13 +40,11 @@ void Table::partySeated(int npeople)
 void Table::partyOrdered(Order *order)
 {
     
-    if ( this->status != SEATED || order == NULL ) return;
+    if ( this->status != SEATED ) return;
     
-    if( this->order != NULL ) {
-        delete this->order;
-    }
+    if ( order == NULL && this->order == NULL ) return;
     
-    this->order = order;
+    if ( order != NULL ) this->order = order;
     
     this->status = ORDERED;
     
@@ -160,6 +158,18 @@ string Table::getWaiterName()
     
     else return string(this->waiter->getName());
     
+}
+
+void Table::createOrderObject()
+{
+    
+    this->order = new Order();
+    
+}
+
+Order * Table::getOrder()
+{
+    return this->order;
 }
 
 Table::~Table()

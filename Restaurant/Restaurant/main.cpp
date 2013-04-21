@@ -421,7 +421,15 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
                 
                 ordering_enabled = true;
                 
-                order = new Order();
+                if( currentTable == NULL )
+                {
+                    cout << "ERROR: Cannot place order for a table that doesn't exist!" << endl;
+                }
+                else
+                {
+                    currentTable->createOrderObject();
+                    order = currentTable->getOrder();
+                }
                 
             }
             
