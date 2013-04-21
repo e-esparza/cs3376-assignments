@@ -288,7 +288,7 @@ int main(int argc, const char * argv[])
     }
     
     // Begin activites
-    processActivites(menu, tableManager, waiterManager);
+    //processActivites(menu, tableManager, waiterManager);
     // End activities
     
     // Some debugging information about the total objects managed.
