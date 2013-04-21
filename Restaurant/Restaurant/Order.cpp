@@ -15,13 +15,33 @@ void Order::addItem(MenuItem *itemp)
 {
     
     // We cannot add anymore menu items.
-    if ( this->maxItems == this->numItems ) return;
+    if ( this->maxItems == this->numItems ) this->extendItemsArray();
     
     this->itemsp[this->numItems] = itemp;
     
     this->numItems++; // Increment total number of items.
     
     return;
+    
+}
+
+void Order::extendItemsArray()
+{
+    
+    MenuItem ** newArray = new MenuItem * [(this->numItems+1)];
+    
+    for( int i = 0; i < this->numItems; i++ )
+    {
+        
+        newArray[i] = this->itemsp[i];
+        
+    }
+    
+    delete [] this->itemsp;
+    
+    this->itemsp = newArray;
+    
+    this->maxItems++;
     
 }
 

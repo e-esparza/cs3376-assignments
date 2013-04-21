@@ -19,6 +19,8 @@ enum ConfigTokenizationSection {
     ConfigTokenizationSectionNull
 };
 
+void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * waiterManager);
+
 int main(int argc, const char * argv[])
 {
     
@@ -285,14 +287,16 @@ int main(int argc, const char * argv[])
         
     }
     
+    // Begin activites
+    processActivites(menu, tableManager, waiterManager);
+    // End activities
+    
     // Some debugging information about the total objects managed.
+    cout << "~~~~Begin Debugging Information~~~" << endl;
     menu->printMenuItems();
     tableManager->printData();
     waiterManager->printData();
-    
-    // Begin activites
-    
-    // End activities
+    cout << "~~~~End Debugging Information~~~" << endl;
     
     // Deallocate memory that stores the table manager.
     delete tableManager;
@@ -307,3 +311,157 @@ int main(int argc, const char * argv[])
     
 }
 
+void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * waiterManager)
+{
+    
+    ifstream input("activity.txt");
+    string line;
+    
+    while(getline(input, line))
+    {
+        
+        istringstream iss(line);
+        
+        string token;
+        
+        bool ordering_enabled;
+        
+        ordering_enabled = false;
+        
+        Table * currentTable;
+        
+        currentTable = NULL;
+        
+        Order * order;
+        
+        order = NULL;
+        
+        while (iss >> token)
+        {
+            
+            char command_prefix; // Gives us the first letter of the token.
+            
+            int id; // gives us any number that follows the command prefix;
+            
+            command_prefix = token.substr(0, 1).c_str()[0];
+            id = atoi(token.substr(1).c_str());
+            
+            // Command Reference
+            // T - Denotes a new table for programming.
+            // P - Denotes a party of id members is at the table.
+            // O - Denotes that the table should begin ordering.
+            // S - Food has arrived at the table.
+            // C - The customer has left and table is cleaned.
+            // x - Any other command denotes food item if we O'd.
+            // Menu items may have prefix of T,P,O,S, or C.
+            
+            if ( ordering_enabled ) {
+                
+                if( currentTable == NULL )
+                {
+                    cout << "WARNING: Order recieved for a table that does not exist." << endl;
+                }
+                
+                
+                stringstream menuItemName;
+                
+                menuItemName << command_prefix << id;
+                
+                MenuItem * menuItem;
+                
+                menuItem = menu->findItem(menuItemName.str());
+                
+                // Any command_prefix can represent a menu item.
+                //cout << "Table ordered item: " << command_prefix << id << endl;
+                
+                if( menuItem == NULL )
+                {
+                    
+                    cout << "WARNING: Table ordered item " << menuItemName.str() << " that does not exist." << endl;
+                    
+                }
+                else
+                {
+                    
+                    order->addItem(menuItem);
+                    
+                }
+                
+                // Lets go to the next token.
+                continue;
+                
+            }
+            
+            // If we made it here then we're not
+            // doing an order so process the tokens
+            // as we would normally do.
+            
+            if ( command_prefix == 'T' )
+            {
+                
+                currentTable = tableManager->getTableWithId(id);
+                
+                if ( currentTable == NULL )
+                {
+                    cout << "ERROR: TableManager could not find table with id " << id << " defined by activity.txt" << endl;
+                }
+                
+                
+            }
+            
+            else if ( command_prefix == 'P' )
+            {
+                
+                if ( currentTable != NULL )
+                {
+                    currentTable->partySeated(id);
+                }
+                
+            }
+            
+            else if ( command_prefix == 'O' )
+            {
+                
+                ordering_enabled = true;
+                
+                order = new Order();
+                
+            }
+            
+            else if ( command_prefix == 'S' )
+            {
+                
+                if ( currentTable != NULL )
+                {
+                    currentTable->partyServed();
+                }
+                
+            }
+            
+            else if ( command_prefix == 'C' )
+            {
+                
+                if ( currentTable != NULL )
+                {
+                    currentTable->partyCheckout();
+                    cout << endl << endl;
+                }
+                
+            }
+            
+            
+        }
+        
+        if ( ordering_enabled )
+        {
+            if ( currentTable != NULL && order != NULL )
+            {
+                currentTable->partyOrdered(order);
+            }
+        }
+        
+        //cout << "~~~~~~~~~~~~End of line~~~~~~~~~~~~" << endl;
+        
+    }
+    
+}
