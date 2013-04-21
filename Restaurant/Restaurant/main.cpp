@@ -454,6 +454,7 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
             if ( currentTable != NULL && order != NULL )
             {
                 currentTable->partyOrdered(order);
+                order = NULL;
             }
         }
         
