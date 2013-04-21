@@ -169,8 +169,6 @@ Table::~Table()
     
     delete this->order;
     
-    delete this->waiter;
-    
 }
 
 TableManager::TableManager()
