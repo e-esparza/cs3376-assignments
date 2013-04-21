@@ -332,10 +332,6 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
         
         currentTable = NULL;
         
-        Order * order;
-        
-        order = NULL;
-        
         while (iss >> token)
         {
             
@@ -380,7 +376,7 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
                 else
                 {
                     
-                    order->addItem(menuItem);
+                    currentTable->getOrder()->addItem(menuItem);
                     
                 }
                 
@@ -428,7 +424,6 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
                 else
                 {
                     currentTable->createOrderObject();
-                    order = currentTable->getOrder();
                 }
                 
             }
@@ -459,10 +454,9 @@ void processActivites(Menu * menu, TableManager * tableManager, WaiterManager * 
         
         if ( ordering_enabled )
         {
-            if ( currentTable != NULL && order != NULL )
+            if ( currentTable != NULL )
             {
-                currentTable->partyOrdered(order);
-                order = NULL;
+                currentTable->partyOrdered(NULL);
             }
         }
         
