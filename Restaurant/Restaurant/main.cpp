@@ -290,6 +290,10 @@ int main(int argc, const char * argv[])
     tableManager->printData();
     waiterManager->printData();
     
+    // Begin activites
+    
+    // End activities
+    
     // Deallocate memory that stores the table manager.
     delete tableManager;
     

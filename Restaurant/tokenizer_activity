@@ -12,6 +12,10 @@
         
         ordering_enabled = false;
         
+        Table * currentTable;
+        
+        currentTable = NULL;
+
         while (iss >> token)
         {
             
