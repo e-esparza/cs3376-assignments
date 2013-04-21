@@ -131,7 +131,7 @@ void Table::partyCheckout()
     
     tip *= this->order->getOrderTotal();
     
-    cout << "Tip: $" << tip << ( (this->numPeople >= 6) ? "20% (for parties of 6 or more)" : "15%" ) << endl;
+    cout << "Tip: $" << tip << " (" << ( (this->numPeople >= 6) ? "20% (for parties of 6 or more)" : "15%" ) << ")" << endl;
     
     cout << "Total: $" << (this->order->getOrderTotal()+tax+tip) << endl;
     
