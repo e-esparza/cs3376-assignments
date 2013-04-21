@@ -88,6 +88,11 @@ double Order::getOrderTotal()
 Order::~Order()
 {
     
+     for( int i = 0; i < this->numItems; i++ )
+     {
+         this->itemsp[i] = NULL;
+     }
+    
     this->maxItems = 0;
     
     this->numItems = 0;
