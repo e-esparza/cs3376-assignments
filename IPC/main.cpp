@@ -113,10 +113,10 @@ int main(int argc, const char * argv[])
                     cout << "[Child] Quick Sort Process Ended." << endl;
                     
                     // terminate shared memory
-                    shmdt(shared_terminate);
-                    shmdt(shared_flag);
-                    shmdt(shared_integer);
-                    shmctl(segment_id, IPC_RMID, NULL);
+                    //shmdt(shared_terminate);
+                    //shmdt(shared_flag);
+                    //shmdt(shared_integer);
+                    //shmctl(segment_id, IPC_RMID, NULL);
                     
                     exit(EXIT_SUCCESS);
                     
@@ -155,6 +155,11 @@ int main(int argc, const char * argv[])
                     // terminate child.
                     *shared_terminate = 1;
                     
+		    shmdt(shared_terminate);
+                    shmdt(shared_flag);
+                    shmdt(shared_integer);
+                    shmctl(segment_id, IPC_RMID, NULL);
+
                     exit(EXIT_SUCCESS);
                 }
                 
